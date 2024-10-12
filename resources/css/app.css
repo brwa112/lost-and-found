@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: "nrt";
+    src: url("/public/NRT-Reg.ttf")
+  }
+
+  *{
+    font-family: "nrt", sans-serif;
+  }

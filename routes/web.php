@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryContrller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Foundation\Application;
@@ -28,10 +29,12 @@ Route::get('/dashboard', function () {
 });
 
 Route::middleware(IsAdmin::class)->group(function(){
-
     Route::get('/AdminDashboard', function(){
         return Inertia::render('Admin/AdminDashboard');
     })->name('admindashboard');
+
+
+    Route::resource('/category',CategoryContrller::class)->names('category');
 
 });
 
