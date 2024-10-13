@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryContrller;
-use App\Http\Controllers\ProfileController;
-use App\Http\Middleware\IsAdmin;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Middleware\IsAdmin;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\admin\CityController;
+use App\Http\Controllers\Admin\CategoryContrller;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -34,7 +35,8 @@ Route::middleware(IsAdmin::class)->group(function(){
     })->name('admindashboard');
 
 
-    Route::resource('/category',CategoryContrller::class)->names('category');
+    Route::resource('/category',CategoryContrller::class)->names('category')->except(['show','create']);
+    Route::resource('/city',CityController::class)->names('city')->except(['show','create']);
 
 });
 

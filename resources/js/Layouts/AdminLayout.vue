@@ -19,13 +19,19 @@ import { Link } from '@inertiajs/vue3';
                 <h1>لۆگۆ</h1>
             </header>
             <div class=" mt-10 text-lg px-6 space-y-6">
-                <Link :href="route('home')" class="flex items-center gap-x-4 " :class="$page.component == 'Welcome' ? 'text-blue-500' : 'text-white'"> 
+                <Link :href="route('home')" class="flex items-center gap-x-4 " :class="$page.component == 'Welcome' ? 'text-blue-500' : 'text-white'">
                     <i class="fa-solid fa-house"></i>
-                    پەڕەی سەرەکی  
+                    پەڕەی سەرەکی
                 </Link>
-                <Link :href="route('category.index')" class="flex items-center gap-x-4 " :class="$page.component == 'Admin/Category/index' ? 'text-blue-500' : 'text-white'"> 
+                <Link :href="route('category.index')" class="flex items-center gap-x-4 " :class="($page.component == 'Admin/Category/index' || $page.component == 'Admin/Category/edit') ? 'text-blue-500' : 'text-white'"
+                >
                     <i class="fa-solid fa-layer-group"></i>
-                     جۆرەکان  
+                     جۆرەکان
+                </Link>
+                <Link :href="route('city.index')" class="flex items-center gap-x-4 " :class="($page.component == 'Admin/City/index' || $page.component == 'Admin/City/edit') ? 'text-blue-500' : 'text-white'"
+                >
+                    <i class="fa-solid fa-layer-group"></i>
+                     شارەکان
                 </Link>
             </div>
         </div>
