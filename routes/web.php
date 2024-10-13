@@ -7,6 +7,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\admin\CityController;
 use App\Http\Controllers\Admin\CategoryContrller;
+use App\Http\Controllers\admin\LocationController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -37,6 +38,8 @@ Route::middleware(IsAdmin::class)->group(function(){
 
     Route::resource('/category',CategoryContrller::class)->names('category')->except(['show','create']);
     Route::resource('/city',CityController::class)->names('city')->except(['show','create']);
+    Route::resource('/location',LocationController::class)->names('location')->except(['show','create']);
+
 
 });
 

@@ -19,7 +19,7 @@ onMounted(()=>{
 })
 
 const submit = (data)=> {
-    form.patch(route('city.update',data),{
+    form.patch(route('location.update',data),{
         onFinish: function(){
             Swal.fire({
             position: "top-end",
@@ -51,7 +51,7 @@ const destroy = (id)=>{
                     'دەیتاکە بەسەرکەوتووی سڕایەوە',
                     'success'
                     )
-                    router.delete(route('city.destroy',id), { preserveScroll: true });
+                    router.delete(route('location.destroy',id), { preserveScroll: true });
 
                     // router.delete(`/invoiceDestroy/${id}`, { preserveScroll: true });
                 }
@@ -63,7 +63,6 @@ const destroy = (id)=>{
 <template>
     <Head title="Admin"/>
 
-    {{ data.name }}
     <AdminLayout>
         <div class="min-w-[720px] mx-auto">
 

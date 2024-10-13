@@ -23,6 +23,10 @@ import { Link } from '@inertiajs/vue3';
                     <i class="fa-solid fa-house"></i>
                     پەڕەی سەرەکی
                 </Link>
+                <Link :href="route('admindashboard')" class="flex items-center gap-x-4 " :class="$page.component == 'Admin/AdminDashboard' ? 'text-blue-500' : 'text-white'">
+                    <i class="fa-regular fa-grid-horizontal"></i>
+                     داشبۆرد
+                </Link>
                 <Link :href="route('category.index')" class="flex items-center gap-x-4 " :class="($page.component == 'Admin/Category/index' || $page.component == 'Admin/Category/edit') ? 'text-blue-500' : 'text-white'"
                 >
                     <i class="fa-solid fa-layer-group"></i>
@@ -30,8 +34,13 @@ import { Link } from '@inertiajs/vue3';
                 </Link>
                 <Link :href="route('city.index')" class="flex items-center gap-x-4 " :class="($page.component == 'Admin/City/index' || $page.component == 'Admin/City/edit') ? 'text-blue-500' : 'text-white'"
                 >
-                    <i class="fa-solid fa-layer-group"></i>
+                <i class="fa-sharp fa-solid fa-city"></i>
                      شارەکان
+                </Link>
+                <Link :href="route('location.index')" class="flex items-center gap-x-4 " :class="($page.component == 'Admin/Location/index' || $page.component == 'Admin/Location/edit') ? 'text-blue-500' : 'text-white'"
+                >
+                <i class="fa-regular fa-location-dot"></i>
+                     شوێنەکان
                 </Link>
             </div>
         </div>
